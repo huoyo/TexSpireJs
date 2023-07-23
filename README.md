@@ -55,6 +55,8 @@ window.onload = function () {
 
 ### 添加内容
 
+> 添加第一页
+
 ```javascript
  /*创建一个普通页面 设置为居中（也可以设置为left）*/
 texSpire.createPage("文本框演示", "Huoyo", "center");
@@ -62,6 +64,15 @@ texSpire.createPage("文本框演示", "Huoyo", "center");
 texSpire.setContentDirection(0, 'h');
 /*在第0页添加一个有标题的文本框到页面*/
 texSpire.createTitleTextToPage(0, "文本标题", "文本内容", 400, 400);
+
+```
+
+> 添加第二页
+
+```javascript
+texSpire.createPage("列表演示", "Huoyo", "center");
+texSpire.setContentDirection(1, 'h')
+texSpire.createListCardToPage(1, "列表标题", ['任务1', '任务2'], 'radio', 400, 400)
 
 ```
 
