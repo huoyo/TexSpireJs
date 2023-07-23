@@ -14,7 +14,10 @@
     <img src='https://shields.io/badge/dependencies-echarts.js-r.svg'>
 </div>
 
-<h4>TexSpireJs是一个使用js制作像ppt一样播放网页的组件库，内置了很多基础的组件如：列表、表格、折线图、词云图、柱状图等等</h4>
+<h4>A JavaScript library for building html presentations.</h4>
+<h4>You can build some simple components through TexSpireJs without writing html+css code</h4>
+
+<h4>TexSpireJs是一个使用js制作像ppt一样播放网页的组件库，内置了很多基础的组件如：列表、表格、折线图、词云图、柱状图等等，你完全可以通过js api创建基础的组件，而不需要自己写html代码</h4>
 
 ## 演示
 
