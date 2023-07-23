@@ -23,8 +23,10 @@
             page3();
             page4();
             page5();
-
+            /*增加右侧导航栏（鼠标移到右侧即可展示）*/
             addNavMenu();
+            /*在右侧展示导航栏 默认不展示，鼠标移动过去才会展示*/
+            texSpire.setStaticNavMenu(true);
             /*从第0页开始播放*/
             texSpire.playPage(0)
 
@@ -83,7 +85,6 @@
         }
 
         function addNavMenu() {
-            /*增加右侧导航栏（鼠标移到右侧即可展示）*/
             texSpire.addNavMenu(0, "首页",)
             texSpire.addNavMenu(1, "文本框演示")
             texSpire.addNavMenu(2, "列表演示")

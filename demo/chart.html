@@ -23,10 +23,12 @@
             page1();
             page2();
             page3();
-            // page4();
-            // page5();
+            page4();
+            page5();
 
             addNavMenu();
+            /*在右侧展示导航栏 默认不展示，鼠标移动过去才会展示*/
+            texSpire.setStaticNavMenu(true);
             /*从第0页开始播放*/
             texSpire.playPage(0)
 
@@ -66,6 +68,20 @@
             texSpire.createBarChartsToPage(3, "柱状图",["第一条","第一条"],["x1","x2","x3","x4"], [[10,20,15,17],[30,21,17,19]], 700, 300)
 
         }
+        function page4() {
+            /*创建一个普通页面 设置为居中（也可以设置为left）*/
+            texSpire.createPage("词云图", "Huoyo", "center");
+            texSpire.createWordCloudToPage(4, "词云图",["关键词1","关键词2","关键词3","关键词4"],[10,20,15,17], 700, 300)
+        }
+        function page5() {
+            /*创建一个普通页面 设置为居中（也可以设置为left）*/
+            texSpire.createPage("饼图", "Huoyo", "center");
+            /*设置组件排列方向 h为横向 v为纵向*/
+            texSpire.setContentDirection(5, 'h');
+            texSpire.createWordCloudToPage(5, "词云图",["关键词1","关键词2","关键词3","关键词4"],[10,20,15,17], 400, 300);
+            texSpire.createPieChartToPage(5, "饼图",["类别1","类别2","类别3"],[10,30,70], 400, 300);
+
+        }
 
 
         function addNavMenu() {
@@ -74,6 +90,8 @@
             texSpire.addNavMenu(1, "折线图")
             texSpire.addNavMenu(2, "折线图与柱状图")
             texSpire.addNavMenu(3, "多个柱状图")
+            texSpire.addNavMenu(4, "词云图")
+            texSpire.addNavMenu(5, "饼图")
         }
     </script>
 </head>
