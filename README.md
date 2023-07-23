@@ -11,7 +11,7 @@
     <img src='https://gitee.com/huoyo/tex-spire-js/badge/star.svg'>
     <img src='https://shields.io/badge/version-1.0.0-green.svg'>
     <img src='https://shields.io/badge/author-Chang Zhang-dbab09.svg'>
-    <img src='https://shields.io/badge/dependencies-ecgarts.js-r.svg'>
+    <img src='https://shields.io/badge/dependencies-echarts.js-r.svg'>
 </div>
 
 <h4>TexSpireJs是一个使用js制作像ppt一样播放网页的组件库，内置了很多基础的组件如：列表、表格、折线图、词云图、柱状图等等</h4>
@@ -62,7 +62,7 @@ window.onload = function () {
 texSpire.createPage("文本框演示", "Huoyo", "center");
 /*设置第0页组件排列方向 h为横向 v为纵向*/
 texSpire.setContentDirection(0, 'h');
-/*在第0页添加一个有标题的文本框到页面*/
+/*在第0页添加一个有标题的文本框*/
 texSpire.createTitleTextToPage(0, "文本标题", "文本内容", 400, 400);
 
 ```
