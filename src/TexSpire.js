@@ -1,11 +1,9 @@
-function TexSpire(divId,isInit) {
+function TexSpire(divId) {
     this.back = document.querySelector(`#${divId}`);
     this.back.className = 'page-container';
     this.pageDoms = [];
     this.playPageNum = -1;
-    if (isInit) {
-        this.back.innerHTML = '';
-    }
+    this.back.innerHTML = '';
     this.themes = {
         '@theme': {
             'titleColor': '#0e13ab',

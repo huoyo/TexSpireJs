@@ -22,8 +22,52 @@
 
 如果阁下需要一个更优雅和简单的**文字生成演示效果**的在线工具，请参考[TexSpire](http://www.texspire.cn?sc=gitee)
 
-## 使用教程
+## 使用参考
 
 1、基础用法，参考[base.html](demo/base.html)
 
 2、图表用法，参考[chart.html](demo/chart.html)
+
+## 教程
+
+### 引入依赖
+
+```html
+<link rel="styleSheet" type="text/css" href="../src/TexSpire.css">
+<script src="../src/TexSpire.js"></script>
+```
+
+### 定义容器
+
+```html
+<div id="viewpages"></div>
+```
+
+### 初始化
+
+```javascript
+
+window.onload = function () {
+    /*初始化TexSpire*/
+    let texSpire = new TexSpire('viewpages');
+}
+```
+
+### 添加内容
+
+```javascript
+ /*创建一个普通页面 设置为居中（也可以设置为left）*/
+texSpire.createPage("文本框演示", "Huoyo", "center");
+/*设置第0页组件排列方向 h为横向 v为纵向*/
+texSpire.setContentDirection(0, 'h');
+/*在第0页添加一个有标题的文本框到页面*/
+texSpire.createTitleTextToPage(0, "文本标题", "文本内容", 400, 400);
+
+```
+
+### 播放
+
+```javascript
+/*从第0页开始播放*/
+texSpire.playPage(0);
+```
