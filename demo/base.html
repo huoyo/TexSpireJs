@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="Texspire">
+    <meta name="description" content="">
+    <title>TexSpireJs</title>
+    <link rel="styleSheet" type="text/css" href="../src/TexSpire.css">
+    <script src="../src/TexSpire.js"></script>
+    <style>
+
+    </style>
+    <script>
+        let texSpire;
+        window.onload = function () {
+            /*初始化TexSpire*/
+            texSpire = new TexSpire('viewpages');
+
+            /*添加页面*/
+            page0();
+            page1();
+            page2();
+            page3();
+            page4();
+            page5();
+
+            addNavMenu();
+            /*从第0页开始播放*/
+            texSpire.playPage(0)
+
+
+        }
+
+        function page0() {
+            /*创建一个仅仅只有标题的页面 设置为居中（也可以设置为left）*/
+            texSpire.createTitlePage("这是一份简单的演示文档", "Huoyo", "center");
+        }
+
+        function page1() {
+            /*创建一个普通页面 设置为居中（也可以设置为left）*/
+            texSpire.createPage("文本框演示", "Huoyo", "center");
+            /*设置组件排列方向 h为横向 v为纵向*/
+            texSpire.setContentDirection(1, 'h')
+            texSpire.createTitleTextToPage(1, "文本标题", "文本框文本框文本框文本框文本框文本框文本框文本框文本框文本框文本框文本框文本框文本框文本框文本框文本框文本框文本框文本框", 400, 400)
+            texSpire.createTitleTextToPage(1, "文本标题", "文本框文本框文本框文本框文本框文本框文本框文本框文本框文本框文本框文本框文本框文本框文本框文本框文本框文本框文本框文本框", 400, 400)
+        }
+
+        function page2() {
+            texSpire.createPage("列表演示", "Huoyo", "center");
+            texSpire.setContentDirection(2, 'h')
+            texSpire.createListCardToPage(2, "列表标题", ['任务1', '任务2'], 'radio', 400, 400)
+            texSpire.createListCardToPage(2, "列表标题", ['任务1', '任务1'], 'checkbox', 400, 400)
+        }
+        function page3() {
+            texSpire.createPage("表格演示", "Huoyo", "center");
+            texSpire.setContentDirection(3, 'h');
+            let tableTitles = ["序号","姓名","职业","年龄"];
+            let tableData = [
+                ["1","张三","后端工程师","22"],
+                ["2","李四","前端工程师","22"],
+                ["3","王五","UI设计师","22"],
+                ["4","赵六","产品经理","22"],
+            ]
+            texSpire.createTableToPage(3, "表格", tableTitles,tableData, 700, 400)
+        }
+        function page4() {
+            texSpire.createPage("标签演示", "Huoyo", "center");
+            texSpire.setContentDirection(4, 'v');
+            /*居中的标签*/
+            texSpire.createLabelsToPage(4, ["标签1","标签2","标签3","标签4"], "center", 700, 50)
+            /*靠左的标签*/
+            texSpire.createLabelsToPage(4, ["标签1","标签2","标签3","标签4"], "left", 700, 50)
+        }
+        function page5() {
+            texSpire.createPage("标签演示", "Huoyo", "center");
+            texSpire.setContentDirection(5, 'v');
+            /*设置页面主题 [@theme @darktheme @magicthme]*/
+            texSpire.setPageTheme(5, '@darktheme');
+            /*居中的标签*/
+            texSpire.createLabelsToPage(5, ["标签1","标签2","标签3","标签4"], "center", 700, 50)
+            /*靠左的标签*/
+            texSpire.createLabelsToPage(5, ["标签1","标签2","标签3","标签4"], "left", 700, 50)
+        }
+
+        function addNavMenu() {
+            /*增加右侧导航栏（鼠标移到右侧即可展示）*/
+            texSpire.addNavMenu(0, "首页",)
+            texSpire.addNavMenu(1, "文本框演示")
+            texSpire.addNavMenu(2, "列表演示")
+            texSpire.addNavMenu(3, "表格演示")
+            texSpire.addNavMenu(4, "标签演示")
+            texSpire.addNavMenu(5, "主题标签演示")
+        }
+    </script>
+</head>
+<body>
+<div id="viewpages">
+</div>
+</body>
+</html>

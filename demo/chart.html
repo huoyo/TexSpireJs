@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="Texspire">
+    <meta name="description" content="">
+    <title>TexSpireJs</title>
+    <link rel="styleSheet" type="text/css" href="../src/TexSpire.css">
+    <script src="../src/TexSpire.js"></script>
+    <script src="../src/echarts.min.js"></script>
+    <script src="../src/echarts-wordcloud.min.js"></script>
+    <style>
+
+    </style>
+    <script>
+        let texSpire;
+        window.onload = function () {
+            /*初始化TexSpire*/
+            texSpire = new TexSpire('viewpages');
+
+            /*添加页面*/
+            page0();
+            page1();
+            page2();
+            page3();
+            // page4();
+            // page5();
+
+            addNavMenu();
+            /*从第0页开始播放*/
+            texSpire.playPage(0)
+
+
+        }
+
+        function page0() {
+            /*创建一个仅仅只有标题的页面 设置为居中（也可以设置为left）*/
+            texSpire.createTitlePage("这是一份关于图表的演示文档", "Huoyo", "center");
+        }
+
+        function page1() {
+            /*创建一个普通页面 设置为居中（也可以设置为left）*/
+            texSpire.createPage("折线图", "Huoyo", "center");
+            /*设置组件排列方向 h为横向 v为纵向*/
+            texSpire.setContentDirection(1, 'h');
+            /*折线图包含多条 横坐标不变*/
+            texSpire.createLineChartsToPage(1, "折线图",["第一条","第二条"],["x1","x2","x3","x4"], [[2,3,4,5],[5,6,8,6]], 700, 500)
+
+        }
+        function page2() {
+            /*创建一个普通页面 设置为居中（也可以设置为left）*/
+            texSpire.createPage("折线图与柱状图", "Huoyo", "center");
+            /*设置组件排列方向 h为横向 v为纵向*/
+            texSpire.setContentDirection(2, 'h');
+            /*折线图包含多条 横坐标不变*/
+            texSpire.createLineChartsToPage(2, "折线图",["第一条"],["x1","x2","x3","x4"], [[10,20,15,17]], 700, 400)
+            texSpire.createBarChartsToPage(2, "柱状图",["第一条"],["x1","x2","x3","x4"], [[10,20,15,17]], 700, 400)
+
+        }
+        function page3() {
+            /*创建一个普通页面 设置为居中（也可以设置为left）*/
+            texSpire.createPage("多个柱状图", "Huoyo", "center");
+            /*设置组件排列方向 h为横向 v为纵向*/
+            texSpire.setContentDirection(3, 'v');
+            texSpire.createBarChartsToPage(3, "柱状图",["第一条"],["x1","x2","x3","x4"], [[10,20,15,17]], 700, 300)
+            texSpire.createBarChartsToPage(3, "柱状图",["第一条","第一条"],["x1","x2","x3","x4"], [[10,20,15,17],[30,21,17,19]], 700, 300)
+
+        }
+
+
+        function addNavMenu() {
+            /*增加右侧导航栏（鼠标移到右侧即可展示）*/
+            texSpire.addNavMenu(0, "这是一份关于图表的演示文档",)
+            texSpire.addNavMenu(1, "折线图")
+            texSpire.addNavMenu(2, "折线图与柱状图")
+            texSpire.addNavMenu(3, "多个柱状图")
+        }
+    </script>
+</head>
+<body>
+<div id="viewpages">
+</div>
+</body>
+</html>
